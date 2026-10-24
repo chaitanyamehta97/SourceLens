@@ -1,0 +1,177 @@
+{
+  "products": [
+    {
+      "product_id": "hp-001",
+      "name": "Headphone A",
+      "brand": "ExampleBrand",
+      "model": "EB-100",
+      "price_usd": 129.00,
+      "type": "OVER_EAR",
+      "connection": "WIRELESS",
+      "feature_tags": ["noise cancelling", "comfort", "long battery"],
+      "updated_on": "2026-10-15",
+      "evidence": [
+        {
+          "evidence_id": "ev-001",
+          "supported_attribute": "noise cancelling",
+          "factual_claim": "Active noise cancellation with 3 modes",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/eb-100/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        },
+        {
+          "evidence_id": "ev-002",
+          "supported_attribute": "comfort",
+          "factual_claim": "Reviewer says it stays comfortable over long sessions",
+          "source_name": "Example Review Site",
+          "source_ref": "https://example.com/reviews/eb-100",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "REVIEW_EXCERPT"
+        },
+        {
+          "evidence_id": "ev-003",
+          "supported_attribute": "long battery",
+          "factual_claim": "Rated for 30 hours of playback",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/eb-100/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        }
+      ]
+    },
+    {
+      "product_id": "hp-002",
+      "name": "Headphone B",
+      "brand": "ExampleBrand",
+      "model": "EB-200",
+      "price_usd": 119.00,
+      "type": "OVER_EAR",
+      "connection": "WIRELESS",
+      "feature_tags": ["noise cancelling", "comfort"],
+      "updated_on": "2026-10-15",
+      "evidence": [
+        {
+          "evidence_id": "ev-004",
+          "supported_attribute": "noise cancelling",
+          "factual_claim": "Hybrid active noise cancellation",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/eb-200/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        },
+        {
+          "evidence_id": "ev-005",
+          "supported_attribute": "comfort",
+          "factual_claim": "Reviewer calls the ear pads soft and lightweight",
+          "source_name": "Example Review Site",
+          "source_ref": "https://example.com/reviews/eb-200",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "REVIEW_EXCERPT"
+        }
+      ]
+    },
+    {
+      "product_id": "hp-003",
+      "name": "Headphone C",
+      "brand": "SampleAudio",
+      "model": "SA-30",
+      "price_usd": 139.00,
+      "type": "ON_EAR",
+      "connection": "WIRELESS",
+      "feature_tags": ["long battery", "water resistant"],
+      "updated_on": "2026-10-15",
+      "evidence": [
+        {
+          "evidence_id": "ev-006",
+          "supported_attribute": "long battery",
+          "factual_claim": "Rated for 40 hours of playback",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/sa-30/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        },
+        {
+          "evidence_id": "ev-007",
+          "supported_attribute": "water resistant",
+          "factual_claim": "Rated IPX4 for sweat and splashes",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/sa-30/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        }
+      ]
+    },
+    {
+      "product_id": "hp-004",
+      "name": "Headphone D",
+      "brand": "SampleAudio",
+      "model": "SA-10W",
+      "price_usd": 89.00,
+      "type": "OVER_EAR",
+      "connection": "WIRED",
+      "feature_tags": ["noise cancelling", "comfort"],
+      "updated_on": "2026-10-15",
+      "evidence": [
+        {
+          "evidence_id": "ev-008",
+          "supported_attribute": "noise cancelling",
+          "factual_claim": "Passive and active noise reduction, wired use",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/sa-10w/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        },
+        {
+          "evidence_id": "ev-009",
+          "supported_attribute": "comfort",
+          "factual_claim": "Reviewer reports no pressure after two hours",
+          "source_name": "Example Review Site",
+          "source_ref": "https://example.com/reviews/sa-10w",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "REVIEW_EXCERPT"
+        }
+      ]
+    },
+    {
+      "product_id": "hp-005",
+      "name": "Headphone E",
+      "brand": "DemoSound",
+      "model": "DS-900",
+      "price_usd": 199.00,
+      "type": "OVER_EAR",
+      "connection": "WIRELESS",
+      "feature_tags": ["noise cancelling", "comfort", "long battery"],
+      "updated_on": "2026-10-15",
+      "evidence": [
+        {
+          "evidence_id": "ev-010",
+          "supported_attribute": "noise cancelling",
+          "factual_claim": "Adaptive active noise cancellation with 6 microphones",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/ds-900/specs",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "SPEC"
+        },
+        {
+          "evidence_id": "ev-011",
+          "supported_attribute": "comfort",
+          "factual_claim": "Reviewer praises the memory-foam ear cushions",
+          "source_name": "Example Review Site",
+          "source_ref": "https://example.com/reviews/ds-900",
+          "checked_on": "2026-10-15",
+          "evidence_kind": "REVIEW_EXCERPT"
+        },
+        {
+          "evidence_id": "ev-012",
+          "supported_attribute": "long battery",
+          "factual_claim": "Rated for 35 hours of playback",
+          "source_name": "Manufacturer spec sheet",
+          "source_ref": "https://example.com/ds-900/specs",
+          "checked_on": "2026-03-20",
+          "evidence_kind": "SPEC"
+        }
+      ]
+    }
+  ]
+}
