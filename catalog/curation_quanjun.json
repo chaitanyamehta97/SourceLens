@@ -1,1 +1,258 @@
-
+[
+  {
+    "product_id": "soundcore-space-one",
+    "name": "soundcore Space One",
+    "brand": "soundcore",
+    "model": "Space One",
+    "price_usd": 99.99,
+    "price_source_url": "https://www.soundcore.com/products/space-one",
+    "price_basis": "manufacturer_list",
+    "type": "over-ear",
+    "connection": "both",
+    "feature_tags": [
+      "ANC",
+      "microphone",
+      "multipoint",
+      "foldable"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "soundcore-space-one-e1",
+        "supported_attribute": "type",
+        "factual_claim": "Design: over-ear.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e2",
+        "supported_attribute": "connection",
+        "factual_claim": "Bluetooth 5.3, plus AUX-in for wired listening with an audio cable.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e3",
+        "supported_attribute": "ANC",
+        "factual_claim": "Adaptive Active Noise Cancellation.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e4",
+        "supported_attribute": "microphone",
+        "factual_claim": "Three microphones with AI enhancement for calls.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e5",
+        "supported_attribute": "multipoint",
+        "factual_claim": "Multipoint connection is supported.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e6",
+        "supported_attribute": "foldable",
+        "factual_claim": "The ear cups rotate and fold for storage.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "beats-powerbeats-pro-2",
+    "name": "Beats Powerbeats Pro 2",
+    "brand": "Beats",
+    "model": "Powerbeats Pro 2",
+    "price_usd": 249.99,
+    "price_source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+    "price_basis": "launch_msrp",
+    "type": "in-ear",
+    "connection": "wireless",
+    "feature_tags": [
+      "ANC",
+      "microphone",
+      "water-resistant"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e1",
+        "supported_attribute": "type",
+        "factual_claim": "In-ear earphones with a redesigned earhook.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e2",
+        "supported_attribute": "connection",
+        "factual_claim": "Class 1 Bluetooth wireless connectivity.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e3",
+        "supported_attribute": "ANC",
+        "factual_claim": "Active Noise Cancellation (ANC).",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e4",
+        "supported_attribute": "microphone",
+        "factual_claim": "Three microphones and a voice accelerometer in each earbud for calls.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e5",
+        "supported_attribute": "water-resistant",
+        "factual_claim": "Earbuds are sweat and water resistant with an IPX4 rating; the case is not rated.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "sony-wf-c510",
+    "name": "Sony WF-C510",
+    "brand": "Sony",
+    "model": "WF-C510",
+    "price_usd": 69.99,
+    "price_source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+    "price_basis": "manufacturer_list",
+    "type": "in-ear",
+    "connection": "wireless",
+    "feature_tags": [
+      "microphone",
+      "water-resistant",
+      "multipoint"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "sony-wf-c510-e1",
+        "supported_attribute": "type",
+        "factual_claim": "Closed-type truly wireless earbuds, shaped using ear data from Sony's in-ear earbud line.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e2",
+        "supported_attribute": "connection",
+        "factual_claim": "Wireless over Bluetooth 5.3.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e3",
+        "supported_attribute": "microphone",
+        "factual_claim": "High-quality built-in microphone for hands-free calling.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e4",
+        "supported_attribute": "water-resistant",
+        "factual_claim": "IPX4 rating for the earbuds; the charging case is not water resistant.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e5",
+        "supported_attribute": "multipoint",
+        "factual_claim": "Multipoint Connection pairs with two Bluetooth devices simultaneously.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "beats-solo-4",
+    "name": "Beats Solo 4",
+    "brand": "Beats",
+    "model": "Solo 4",
+    "price_usd": 199.99,
+    "price_source_url": "https://www.businesswire.com/news/home/20240430448719/en/Introducing-Beats-Solo-Buds-Looks-Tiny-Sounds-Huge",
+    "price_basis": "launch_msrp",
+    "type": "on-ear",
+    "connection": "both",
+    "feature_tags": [
+      "microphone",
+      "foldable"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "beats-solo-4-e1",
+        "supported_attribute": "type",
+        "factual_claim": "Form factor: on-ear.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e2",
+        "supported_attribute": "connection",
+        "factual_claim": "Class 1 Bluetooth, plus lossless audio via USB-C or a 3.5 mm audio cable.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e3",
+        "supported_attribute": "microphone",
+        "factual_claim": "Multiple digital beam-forming microphones for calls.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e4",
+        "supported_attribute": "foldable",
+        "factual_claim": "Compact foldable design with a soft protective case.",
+        "evidence_kind": "manufacturer_spec",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  }
+]
