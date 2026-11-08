@@ -175,3 +175,4 @@ if __name__ == "__main__":
     with ProductDatabase() as db:
         for p in db.search_products():
             print(p)
+
