@@ -5,7 +5,7 @@
     "brand": "soundcore",
     "model": "Space One",
     "price_usd": 99.99,
-    "price_source_url": "https://www.soundcore.com/products/space-one",
+    "price_source_url": "https://www.soundcore.com/products/space-one-a3035011",
     "price_basis": "manufacturer_list",
     "type": "over-ear",
     "connection": "both",
@@ -22,7 +22,7 @@
         "factual_claim": "Design: over-ear.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       },
       {
@@ -31,7 +31,7 @@
         "factual_claim": "Bluetooth 5.3, plus AUX-in for wired listening with an audio cable.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       },
       {
@@ -40,7 +40,7 @@
         "factual_claim": "Adaptive Active Noise Cancellation.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       },
       {
@@ -49,7 +49,7 @@
         "factual_claim": "Three microphones with AI enhancement for calls.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       },
       {
@@ -58,7 +58,7 @@
         "factual_claim": "Multipoint connection is supported.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       },
       {
@@ -67,7 +67,7 @@
         "factual_claim": "The ear cups rotate and fold for storage.",
         "evidence_kind": "manufacturer_spec",
         "source_name": "soundcore, Space One product page and specs",
-        "source_url": "https://www.soundcore.com/products/space-one",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
         "checked_on": "2026-11-07"
       }
     ],
