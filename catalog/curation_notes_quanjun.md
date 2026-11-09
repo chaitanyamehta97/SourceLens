@@ -23,7 +23,7 @@ Note: this refines the "launch MSRP" rule announced in Teams. Sony's US page sho
 
 ## Sources
 
-1. **soundcore Space One** — https://www.soundcore.com/products/space-one
+1. **soundcore Space One** — https://www.soundcore.com/products/space-one-a3035011
    Design over-ear; Bluetooth 5.3 plus AUX-in; Adaptive ANC; 3 mics with AI enhancement; multipoint; ear cups rotate and fold. Listed at $99.99 with no sale marking.
 2. **Powerbeats Pro 2** — https://www.businesswire.com/news/home/20250211896520/en (press release issued by Beats)
    Redesigned earhook; Class 1 Bluetooth; Active Noise Cancellation; three microphones and a voice accelerometer per earbud; IPX4 (case not rated); $249.99 (US).
