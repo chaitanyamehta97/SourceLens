@@ -11,46 +11,64 @@ from shared import (
 DEFAULT_WEIGHT = 1.0
 TOP_N = 3
 
-#todo: This is hard to read. Can this be a set?
-# must_haves may name the attribute ("CONNECTION") or its value ("WIRELESS")
-MUST_HAVE_ALIASES = {
-    **{v: SupportedAttribute.TYPE for v in ProductType.values()},
-    **{v: SupportedAttribute.CONNECTION for v in Connection.values()},
-}
 
-
-def load_weights(path) -> dict[str, float]:
+def load_weights(path: str | None = None) -> dict[str, float]:
     """FR-05: weights config. Unknown keys raise ValueError; missing ones default to 1.0."""
     if path is None or not Path(path).exists():
         return {}
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
-    return {SupportedAttribute(k): float(v) for k, v in raw.items()}
+    return {SupportedAttribute(name): float(weight) for name, weight in raw.items()}
 
 
-def split_criteria(prefs: dict) -> tuple[dict, dict]:
-    """Validate the user's selections and split them into (hard, soft) {attribute: target} maps."""
+def requested_criteria(prefs: dict) -> dict[str, str]:
+    """Map each selected attribute to the value the user asked for.
+
+    A dict, not a set, because TYPE and CONNECTION need their requested value:
+        {"TYPE": "OVER_EAR", "CONNECTION": "WIRELESS", "MICROPHONE": "MICROPHONE"}
+    """
     criteria = {}
-    # todo: Why do we need a dict here? can we use a set?
-
     if prefs.get("type"):
         criteria[SupportedAttribute.TYPE] = ProductType(prefs["type"])
     if prefs.get("connection"):
         criteria[SupportedAttribute.CONNECTION] = Connection(prefs["connection"])
-    for tag in map(FeatureTag, prefs.get("features", [])):
+    for feature in prefs.get("features", []):
+        tag = FeatureTag(feature)
         criteria[SupportedAttribute(tag.value)] = tag
+    return criteria
 
-    # todo: make this easier to read. Use more readable names (not "a", "must"
-    must = {MUST_HAVE_ALIASES.get(m) or SupportedAttribute(m) for m in prefs.get("must_haves", [])}
-    hard = {a: t for a, t in criteria.items() if a in must}
-    soft = {a: t for a, t in criteria.items() if a not in must}
+
+def split_criteria(prefs: dict) -> tuple[dict, dict]:
+    """Split selected criteria into (hard, soft).
+
+    must_haves holds attribute names, e.g. ["CONNECTION", "NOISE_CANCELLING"].
+    """
+    criteria = requested_criteria(prefs)
+    must_have_attributes = {SupportedAttribute(name) for name in prefs.get("must_haves", [])}
+
+    hard = {
+        attribute: target
+        for attribute, target in criteria.items()
+        if attribute in must_have_attributes
+    }
+    soft = {
+        attribute: target
+        for attribute, target in criteria.items()
+        if attribute not in must_have_attributes
+    }
     return hard, soft
 
 
-def status(product: dict, attribute: str, target: str, evidenced: set[str]) -> str:
-    """MET only if the product claims the value AND has same-product evidence (C15)."""
+def match_status(product: dict, attribute: str, target: str, evidenced: set[str]) -> str:
+    """FR-19 / C15: MET only if the product claims the value AND has same-product evidence."""
     if not product_has(product, attribute, target):
         return NOT_MET
     return MET if attribute in evidenced else NOT_VERIFIED
+
+
+def ranking_key(result: dict) -> tuple:
+    """FR-05: highest score first, then lowest price, then product_id."""
+    product = result["product"]
+    return (-result["score"], product["price_usd"], product["product_id"])
 
 
 class Recommender:
@@ -67,25 +85,35 @@ class Recommender:
 
         results = []
         for product in self.products:
-            if product["price_usd"] > budget:  # FR-04: budget is always hard
+            # FR-04: budget is always a hard filter
+            if product["price_usd"] > budget:
                 continue
+
+            # FR-04 / C15: every must-have has to be claimed AND backed by evidence
             evidenced = evidenced_attributes(product)
-
-            #todo: make this easier to read. Spit in has evidence and has required product specs
-            if any(status(product, a, t, evidenced) != MET for a, t in hard.items()):  # FR-04
+            meets_required_specs = all(
+                product_has(product, attribute, target) for attribute, target in hard.items()
+            )
+            has_required_evidence = all(attribute in evidenced for attribute in hard)
+            if not (meets_required_specs and has_required_evidence):
                 continue
 
-            summary = {a: status(product, a, t, evidenced) for a, t in soft.items()}  # FR-19
-            met = [a for a, s in summary.items() if s == MET]
+            # FR-19: met / not met / not met (not verified) for each soft preference
+            match_summary = {
+                attribute: match_status(product, attribute, target, evidenced)
+                for attribute, target in soft.items()
+            }
+            met_soft = [attribute for attribute, status in match_summary.items() if status == MET]
+
             results.append({
                 "product": product,
-                "score": sum(self.weights.get(a, DEFAULT_WEIGHT) for a in met),  # FR-05
-                "matched_attributes": [*hard, *met],  # every hard criterion is MET here
-                "match_summary": summary,
+                "score": sum(self.weights.get(attribute, DEFAULT_WEIGHT) for attribute in met_soft),  # FR-05
+                "matched_attributes": [*hard, *met_soft],  # every hard criterion passed above
+                "match_summary": match_summary,
             })
 
-        # FR-05 / FR-06: score desc, then price asc, then product_id asc; top 3
-        results.sort(key=lambda r: (-r["score"], r["product"]["price_usd"], r["product"]["product_id"]))
+        # FR-06: top 3 after a deterministic sort
+        results.sort(key=ranking_key)
         return results[:TOP_N]
 
 
