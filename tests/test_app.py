@@ -36,10 +36,19 @@ def run(**session):
     return at.run()
 
 
+ROOT = Path(__file__).parents[1]
+CATALOG = ROOT / "catalog.json"
+WEIGHTS = ROOT / "weights.json"
+_real_load_catalog = catalog_loader.load_catalog
+
+
 def use_catalog(monkeypatch, tmp_path, content: str):
+    """Make the app load `content` instead of catalog.json (the app's path is fixed)."""
     path = tmp_path / "catalog.json"
     path.write_text(content, encoding="utf-8")
-    monkeypatch.setattr(catalog_loader, "CATALOG_PATH", path)
+    monkeypatch.setattr(
+        catalog_loader, "load_catalog", lambda _path: _real_load_catalog(path)
+    )
 
 
 def submit(at, budget, toggles=()):
@@ -54,7 +63,7 @@ def test_page_loads_real_catalog_with_notice():
     at = run()
     assert not at.exception
     assert any(NOTICE in i.value for i in at.info)  # FR-17
-    count = len(catalog_loader.load_catalog())
+    count = len(catalog_loader.load_catalog(CATALOG))
     assert any(f"{count} products" in c.value for c in at.caption)
     assert not at.button[0].disabled
 
@@ -97,7 +106,7 @@ def test_results_match_the_recommender():  # FR-06, end to end
     )
     assert not at.exception and not at.error
     request = at.session_state["request"]
-    expected = Recommender(catalog_loader.load_catalog()).recommend(
+    expected = Recommender(catalog_loader.load_catalog(CATALOG), WEIGHTS).recommend(
         request.to_recommender_prefs()
     )
     assert expected, "this request should return results on the real catalog"
@@ -137,8 +146,7 @@ def test_app_recovers_once_catalog_is_fixed(monkeypatch, tmp_path):
     use_catalog(monkeypatch, tmp_path, "[]")
     at = run()
     assert at.button[0].disabled
-    real = Path(__file__).parents[1] / "catalog.json"
-    use_catalog(monkeypatch, tmp_path, real.read_text(encoding="utf-8"))
+    use_catalog(monkeypatch, tmp_path, CATALOG.read_text(encoding="utf-8"))
     at.run()
     assert not at.button[0].disabled
 

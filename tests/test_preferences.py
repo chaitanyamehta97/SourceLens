@@ -114,7 +114,11 @@ def test_must_haves_are_respected_by_the_real_recommender():
         features=[FeatureTag.WATER_RESISTANT.value],
         must_have={FeatureTag.WATER_RESISTANT.value: True},
     )
-    results = Recommender(load_catalog()).recommend(request.to_recommender_prefs())
+    root = Path(__file__).parents[1]
+    recommender = Recommender(
+        load_catalog(root / "catalog.json"), root / "weights.json"
+    )
+    results = recommender.recommend(request.to_recommender_prefs())
     assert results
     for r in results:
         product = r["product"]

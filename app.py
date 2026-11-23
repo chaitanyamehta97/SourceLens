@@ -22,6 +22,7 @@ recommender, so the storage choice (ADR-0003) does not affect this file.
 """
 
 import re
+from pathlib import Path
 
 import streamlit as st
 
@@ -34,6 +35,12 @@ from preferences import (
     type_options,
 )
 from recommender import Recommender
+
+ROOT = Path(__file__).parent
+CATALOG_PATH = (
+    ROOT / "catalog.json"
+)  # fixed, read-only; never taken from user input (SEC-05)
+WEIGHTS_PATH = ROOT / "weights.json"  # ranking weights config (FR-05)
 
 TRANSPARENCY_NOTICE = (
     "SourceLens recommendations come from fixed rules and a curated catalog, "
@@ -57,8 +64,8 @@ def _load_catalog_and_recommender() -> tuple[list, Recommender]:
     """Load once and cache only a success. A failure raises, so it is never cached
     and the app recovers as soon as a valid catalog is available (FR-16).
     """
-    records = catalog_loader.load_catalog()  # raises CatalogLoadError on failure
-    return records, Recommender(records)
+    records = catalog_loader.load_catalog(CATALOG_PATH)  # raises CatalogLoadError
+    return records, Recommender(records, WEIGHTS_PATH)
 
 
 def load_catalog_state() -> dict:
