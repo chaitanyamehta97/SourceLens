@@ -12,7 +12,7 @@ DEFAULT_WEIGHT = 1.0
 TOP_N = 3
 
 
-def load_weights(path: str | None = None) -> dict[str, float]:
+def load_weights(path) -> dict[str, float]:
     """FR-05: weights config. Unknown keys raise ValueError; missing ones default to 1.0."""
     if path is None or not Path(path).exists():
         return {}
@@ -44,7 +44,6 @@ def split_criteria(prefs: dict) -> tuple[dict, dict]:
     """
     criteria = requested_criteria(prefs)
     must_have_attributes = {SupportedAttribute(name) for name in prefs.get("must_haves", [])}
-
     hard = {
         attribute: target
         for attribute, target in criteria.items()
@@ -72,7 +71,7 @@ def ranking_key(result: dict) -> tuple:
 
 
 class Recommender:
-    def __init__(self, products: list[dict], weights_path: str | None = None):
+    def __init__(self, products: list[dict], weights_path):
         for product in products:
             validate_product(product)  # fail loudly once at startup, not on every request
         self.products = products
@@ -82,7 +81,6 @@ class Recommender:
         """Up to 3 results, or [] if nothing passes the hard filters. Never relaxes them (FR-10)."""
         budget = validate_budget(prefs.get("budget_usd"))
         hard, soft = split_criteria(prefs)
-
         results = []
         for product in self.products:
             # FR-04: budget is always a hard filter
@@ -104,7 +102,6 @@ class Recommender:
                 for attribute, target in soft.items()
             }
             met_soft = [attribute for attribute, status in match_summary.items() if status == MET]
-
             results.append({
                 "product": product,
                 "score": sum(self.weights.get(attribute, DEFAULT_WEIGHT) for attribute in met_soft),  # FR-05
@@ -114,7 +111,7 @@ class Recommender:
 
         # FR-06: top 3 after a deterministic sort
         results.sort(key=ranking_key)
-        return results[:TOP_N]
+        return results
 
 
 

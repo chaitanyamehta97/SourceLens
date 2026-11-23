@@ -6,24 +6,26 @@ from catalog_loader import load_catalog
 from recommender import Recommender
 
 TEST_CATALOG = Path(__file__).parent / "catalog_loader.json"
+WEIGHTS = Path(__file__).parent / "weights.json"
 
 
-def test_recommend(monkeypatch):
+
+def test_recommend():
     # 1) Dummy user requirements
     prefs = {
         "budget_usd": 300,
-        "connection": "WIRELESS",
-        "features": ["NOISE_CANCELLING", "MULTIPOINT", "FOLDABLE"],
-        "must_haves": ["CONNECTION"],
+        "connection": "BOTH",
+        "features": ["NOISE_CANCELLING", "MULTIPOINT", "FOLDABLE",'WATER_RESISTANT','MICROPHONE'],
+        "must_haves": ["CONNECTION",'MULTIPOINT'],
     }
 
     # 2) Load the clean dataset through the real loader
-    monkeypatch.setattr(catalog_loader, "CATALOG_PATH", TEST_CATALOG)
-    recommender = Recommender(load_catalog())
+    recommender = Recommender(load_catalog(), WEIGHTS)
 
     # 3) Check output
     results = recommender.recommend(prefs)
 
+    print(len(results))
     assert [r["product"]["product_id"] for r in results] == [
         "soundcore-space-one",
         "sony-wf-c510",
