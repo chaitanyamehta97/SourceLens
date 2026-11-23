@@ -1,0 +1,2 @@
+# Verified on PyPI 2026-11-22 (publisher, source repo, release history); pip-audit clean.
+pytest==9.2.0
