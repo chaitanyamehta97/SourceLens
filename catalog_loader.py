@@ -1,4 +1,4 @@
-"""Data layer: load catalog.json once at startup and keep only valid records.
+"""Data layer: load catalog once at startup and keep only valid records.
 
 FR-13  reject invalid records, log a non-sensitive diagnostic, continue with the rest
 FR-16  raise CatalogLoadError so app.py can block requests when nothing usable loads
@@ -20,7 +20,6 @@ from shared import validate_product
 
 logger = logging.getLogger(__name__)
 
-CATALOG_PATH = Path(__file__).parent / "catalog.json"  # SEC-05: fixed, read-only
 
 IDENTITY_FIELDS = ("product_id", "name", "brand", "model")
 EVIDENCE_FIELDS = (
@@ -121,10 +120,10 @@ def parse_catalog(raw_records) -> list[dict]:
     return products
 
 
-def load_catalog() -> list[dict]:
+def load_catalog(path) -> list[dict]:
     """Read CATALOG_PATH once at startup. Raises CatalogLoadError on any failure (FR-16)."""
     try:
-        raw_records = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+        raw_records = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         logger.error("Catalog could not be read or parsed.")  # no path or traceback (FR-16)
         raise CatalogLoadError("Catalog could not be read.") from None

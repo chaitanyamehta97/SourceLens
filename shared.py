@@ -1,4 +1,4 @@
-"""Plain-dict helpers shared across backend modules. Products are raw dicts from catalog.json."""
+"""Plain-dict helpers shared across backend modules. Products are raw dicts from test_catalog.json."""
 from decimal import Decimal, InvalidOperation
 
 from constants import Connection, EvidenceKind, FeatureTag, ProductType, SupportedAttribute

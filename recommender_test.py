@@ -5,7 +5,7 @@ import catalog_loader
 from catalog_loader import load_catalog
 from recommender import Recommender
 
-TEST_CATALOG = Path(__file__).parent / "catalog_loader.json"
+TEST_CATALOG = Path(__file__).parent / "test_catalog.json"
 WEIGHTS = Path(__file__).parent / "weights.json"
 
 
@@ -20,7 +20,7 @@ def test_recommend():
     }
 
     # 2) Load the clean dataset through the real loader
-    recommender = Recommender(load_catalog(), WEIGHTS)
+    recommender = Recommender(load_catalog(TEST_CATALOG), WEIGHTS)
 
     # 3) Check output
     results = recommender.recommend(prefs)
@@ -32,4 +32,4 @@ def test_recommend():
     assert [r["score"] for r in results] == [5.0]
 
 
-#test_recommend()
+test_recommend()
