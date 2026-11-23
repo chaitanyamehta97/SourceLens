@@ -32,4 +32,4 @@ def test_recommend():
     assert [r["score"] for r in results] == [5.0]
 
 
-test_recommend()
+#test_recommend()
