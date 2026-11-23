@@ -96,4 +96,5 @@ class SupportedAttribute(StrEnum):
 
 # Guard against the two tag lists drifting apart.
 _missing = {t.name for t in FeatureTag} - {a.name for a in SupportedAttribute}
-assert not _missing, f"SupportedAttribute is missing feature tags: {_missing}"
+if _missing:  # not assert: asserts are stripped under python -O
+    raise RuntimeError(f"SupportedAttribute is missing feature tags: {_missing}")

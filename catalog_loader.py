@@ -8,6 +8,7 @@ SEC-05 reads one fixed path; no function here takes a path from the user
 """
 import json
 import logging
+import math
 from collections import Counter
 from datetime import datetime
 from decimal import Decimal
@@ -45,6 +46,8 @@ def is_valid_price(value) -> bool:
     """NFR-09 / §4.1: a number >= 0.00 with at most two decimals."""
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return False
+    if not math.isfinite(value):  # json.loads accepts NaN/Infinity literals
+        return False
     price = Decimal(str(value))
     return price >= 0 and price.as_tuple().exponent >= -2
 
@@ -58,7 +61,8 @@ def rejection_reason(record, duplicate_ids: set):
     """Return why a record must be rejected (FR-13), or None if it is valid."""
     if not isinstance(record, dict):
         return "not_an_object"
-    if any(not str(record.get(field) or "").strip() for field in IDENTITY_FIELDS):
+    if any(not isinstance(record.get(field), str) or not record[field].strip()
+           for field in IDENTITY_FIELDS):
         return "missing_identity_field"
     if record["product_id"] in duplicate_ids:
         return "duplicate_id"
@@ -73,6 +77,8 @@ def rejection_reason(record, duplicate_ids: set):
     except (KeyError, TypeError, ValueError):
         return "out_of_vocabulary"
     for evidence in record.get("evidence", []):
+        if not isinstance(evidence, dict):
+            return "incomplete_evidence"
         if any(field not in evidence for field in EVIDENCE_FIELDS):
             return "incomplete_evidence"
         if not is_iso_date(evidence["checked_on"]):
@@ -95,7 +101,10 @@ def parse_catalog(raw_records) -> list[dict]:
         raise CatalogLoadError("Catalog must be a JSON list.")
 
     # FR-13: every record that shares an ID is rejected, since we can't tell which one is right
-    id_counts = Counter(r.get("product_id") for r in raw_records if isinstance(r, dict))
+    id_counts = Counter(
+        r.get("product_id") for r in raw_records
+        if isinstance(r, dict) and isinstance(r.get("product_id"), str)
+    )
     duplicate_ids = {product_id for product_id, count in id_counts.items() if count > 1}
 
     products = []
@@ -119,5 +128,7 @@ def load_catalog() -> list[dict]:
     except (OSError, json.JSONDecodeError):
         logger.error("Catalog could not be read or parsed.")  # no path or traceback (FR-16)
         raise CatalogLoadError("Catalog could not be read.") from None
-    return parse_catalog(raw_records['products'])
+    if isinstance(raw_records, dict):
+        raw_records = raw_records.get("products")
+    return parse_catalog(raw_records)  # non-list shapes raise CatalogLoadError there
 
