@@ -11,22 +11,27 @@ What this version does:
     FR-16  if the catalog fails to load, a nontechnical error and no submit
     FR-17  persistent notice that results come from fixed rules, not generative AI
     FR-19  for each result, which wanted items are met, not met or not verified
+    FR-07/FR-08/FR-15  a "Sources" panel under each result shows the evidence
+           behind every reason: claim, source, kind, date checked, and
+           "source may be outdated" after 180 days
     SEC-01 catalog text is escaped before display
+    SEC-02 evidence links are http/https only and show their domain
     NFR-07 every control has a visible label
 
-Not yet (W13): evidence panel with sources (FR-08, FR-15), comparison
-(FR-11), Reset (FR-12) and price notes (FR-18).
+Not yet (W13): comparison (FR-11), Reset (FR-12) and price notes (FR-18).
 
 The UI never reads the catalog file itself: it calls catalog_loader and
 recommender, so the storage choice (ADR-0003) does not affect this file.
 """
 
 import re
+from datetime import date
 from pathlib import Path
 
 import streamlit as st
 
 import catalog_loader
+from evidence_panel import OUTDATED_LABEL, UNAVAILABLE, evidence_rows
 from preferences import (
     build_request,
     connection_options,
@@ -144,7 +149,34 @@ def show_results(results: list, request) -> None:
                 st.markdown("**Doesn't have:** " + plain(", ".join(not_met)))
             if unverified:
                 st.markdown("**Not verified:** " + plain(", ".join(unverified)))
-    st.caption("Sources for each reason will open here in the next update (W13).")
+            show_sources(product, result["matched_attributes"], request)
+
+
+def show_sources(product: dict, attributes: list, request) -> None:
+    """FR-07, FR-08, FR-15: evidence behind each reason, in an openable panel."""
+    rows = evidence_rows(product, attributes, date.today())
+    if not rows:
+        return
+    with st.expander(f"Sources for these reasons ({len(rows)})"):
+        for row in rows:
+            if row["link"]:
+                domain, href = row["link"]
+                # Streamlit opens Markdown links in a new tab with
+                # rel="noopener noreferrer" (SEC-02); the domain is the link text.
+                reference = f"[{plain(domain)} :material/open_in_new:]({href})"
+            else:
+                reference = f"link {UNAVAILABLE}"
+            st.markdown(
+                f"**{plain(attribute_label(row['attribute'], request))}:** "
+                f"{plain(row['claim'])}"
+            )
+            details = (
+                f"{plain(row['kind'])} · {plain(row['source_name'])} · "
+                f"checked {plain(row['checked'])} · {reference}"
+            )
+            if row["outdated"]:
+                details += f" · :orange[:material/warning: {OUTDATED_LABEL}]"
+            st.caption(details)
 
 
 # ---------- page ----------
