@@ -1,0 +1,513 @@
+[
+  {
+    "product_id": "bose-qc-ultra-headphones-2nd-gen",
+    "name": "Bose QuietComfort Ultra Headphones (2nd Gen)",
+    "brand": "Bose",
+    "model": "QuietComfort Ultra Headphones (2nd Gen)",
+    "price_usd": 449.0,
+    "price_source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones",
+    "price_basis": "LAUNCH_MSRP",
+    "type": "OVER_EAR",
+    "connection": "BOTH",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "MULTIPOINT",
+      "FOLDABLE",
+      "LONG_BATTERY"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Around-ear (circumaural) fit with an adjustable headband and removable ear cushions.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose NZ, QuietComfort Ultra Headphones (2nd Gen) product page and technical specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.co.nz/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Bluetooth Core 5.4 wireless, plus wired USB-C audio for digital lossless listening.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose, QuietComfort Ultra Headphones (2nd Gen) press release (10 Sep 2025)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Noise cancellation with an updated ActiveSense algorithm for Aware Mode; noise cancellation can be adjusted or turned off in the Bose app.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose, QuietComfort Ultra Headphones (2nd Gen) press release (10 Sep 2025)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Built-in microphone.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose NZ, QuietComfort Ultra Headphones (2nd Gen) product page and technical specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.co.nz/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e5",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Bluetooth multipoint connectivity keeps the headphones connected to two source devices simultaneously.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose, QuietComfort Ultra Headphones (2nd Gen) press release (10 Sep 2025)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e6",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "Keeps Bose's classic foldable design; the headphones can be folded into the carrying case.",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose, QuietComfort Ultra Headphones (2nd Gen) press release (10 Sep 2025)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones"
+      },
+      {
+        "evidence_id": "bose-qc-ultra-headphones-2nd-gen-e7",
+        "supported_attribute": "LONG_BATTERY",
+        "factual_claim": "Up to 30 hours of play time (23 hours with Immersive Audio on, 45 hours with ANC off).",
+        "evidence_kind": "SPEC",
+        "source_name": "Bose, QuietComfort Ultra Headphones (2nd Gen) press release (10 Sep 2025)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.bose.com/pressroom/bose-unveils-the-next-generation-of-the-quietcomfort-ultra-headphones"
+      }
+    ],
+    "updated_on": "2026-11-08"
+  },
+  {
+    "product_id": "marshall-major-v",
+    "name": "Marshall Major V",
+    "brand": "Marshall",
+    "model": "Major V",
+    "price_usd": 149.0,
+    "price_source_url": "https://group.marshall.com/2024/04/16/marshall-unveils-major-v-and-minor-iv/",
+    "price_basis": "LAUNCH_MSRP",
+    "type": "ON_EAR",
+    "connection": "BOTH",
+    "feature_tags": [
+      "MICROPHONE",
+      "MULTIPOINT",
+      "FOLDABLE",
+      "LONG_BATTERY"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "marshall-major-v-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Headphone type: on-ear.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      },
+      {
+        "evidence_id": "marshall-major-v-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Bluetooth 5.3 wireless plus a 3.5 mm wired input; a 3.5 mm audio cord is included in the box.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      },
+      {
+        "evidence_id": "marshall-major-v-e3",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Microphone and remote: yes.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      },
+      {
+        "evidence_id": "marshall-major-v-e4",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Bluetooth multipoint connectivity: yes.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      },
+      {
+        "evidence_id": "marshall-major-v-e5",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "Foldable design: yes.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      },
+      {
+        "evidence_id": "marshall-major-v-e6",
+        "supported_attribute": "LONG_BATTERY",
+        "factual_claim": "100+ hours of wireless playtime.",
+        "evidence_kind": "SPEC",
+        "source_name": "Marshall, Major V product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.marshall.com/bm/en/product/major-v"
+      }
+    ],
+    "updated_on": "2026-11-08"
+  },
+  {
+    "product_id": "samsung-galaxy-buds4-pro",
+    "name": "Samsung Galaxy Buds4 Pro",
+    "brand": "Samsung",
+    "model": "Galaxy Buds4 Pro",
+    "price_usd": 249.99,
+    "price_source_url": "https://www.samsung.com/us/business/audio-sound/galaxy-buds4-pro/buy/galaxy-buds4-pro-white-sku-sm-r640nzwaxar",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "IN_EAR",
+    "connection": "WIRELESS",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "WATER_RESISTANT"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "samsung-galaxy-buds4-pro-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Galaxy Buds4 Pro use a canal-fit design.",
+        "evidence_kind": "SPEC",
+        "source_name": "Samsung Electronics, Galaxy Buds4 series press release (Business Wire, 25 Feb 2026)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.businesswire.com/news/home/20260225746748/en/"
+      },
+      {
+        "evidence_id": "samsung-galaxy-buds4-pro-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Galaxy Buds connect as Bluetooth audio regardless of the phone's operating system; advanced settings require a compatible Android phone.",
+        "evidence_kind": "SPEC",
+        "source_name": "Samsung Electronics, Galaxy Buds4 series press release (Business Wire, 25 Feb 2026)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.businesswire.com/news/home/20260225746748/en/"
+      },
+      {
+        "evidence_id": "samsung-galaxy-buds4-pro-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Enhanced Active Noise Cancellation, with Adaptive ANC/EQ that analyzes wearing conditions and ear shape and applies ANC algorithms in real time.",
+        "evidence_kind": "SPEC",
+        "source_name": "Samsung Electronics, Galaxy Buds4 series press release (Business Wire, 25 Feb 2026)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.businesswire.com/news/home/20260225746748/en/"
+      },
+      {
+        "evidence_id": "samsung-galaxy-buds4-pro-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Super Clear Call uses super-wideband call technology for clearer phone calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "Samsung Electronics, Galaxy Buds4 series press release (Business Wire, 25 Feb 2026)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://www.businesswire.com/news/home/20260225746748/en/"
+      },
+      {
+        "evidence_id": "samsung-galaxy-buds4-pro-e5",
+        "supported_attribute": "WATER_RESISTANT",
+        "factual_claim": "Earbuds are rated IP57 (tested in up to 1 metre of fresh water for 30 minutes); the charging case is not water resistant.",
+        "evidence_kind": "SPEC",
+        "source_name": "Euronics Ireland, Samsung Galaxy Buds4 Pro product page (reproduces Samsung specifications)",
+        "checked_on": "2026-11-08",
+        "source_url": "https://euronics.ie/products/samsung-galaxy-buds4-pro-wireless-earbuds-black-sm-r640nzkaeub"
+      }
+    ],
+    "updated_on": "2026-11-08"
+  },
+  {
+    "product_id": "sennheiser-ie-200",
+    "name": "Sennheiser IE 200",
+    "brand": "Sennheiser",
+    "model": "IE 200",
+    "price_usd": 149.95,
+    "price_source_url": "https://sennheiser-hearing.com/p/ie-200",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "IN_EAR",
+    "connection": "WIRED",
+    "feature_tags": [],
+    "evidence": [
+      {
+        "evidence_id": "sennheiser-ie-200-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Ear coupling: ear canal (in-ear), closed acoustic principle.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sennheiser, IE 200 product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://global.sennheiser-hearing.com/products/ie-200"
+      },
+      {
+        "evidence_id": "sennheiser-ie-200-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Wired only: braided 1.2 m cable with MMCX connectors and a 3.5 mm plug.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sennheiser, IE 200 product page and specifications",
+        "checked_on": "2026-11-08",
+        "source_url": "https://global.sennheiser-hearing.com/products/ie-200"
+      }
+    ],
+    "updated_on": "2026-11-08"
+  },
+  {
+    "product_id": "soundcore-space-one",
+    "name": "soundcore Space One",
+    "brand": "soundcore",
+    "model": "Space One",
+    "price_usd": 99.99,
+    "price_source_url": "https://www.soundcore.com/products/space-one-a3035011",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "OVER_EAR",
+    "connection": "BOTH",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "MULTIPOINT",
+      "FOLDABLE"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "soundcore-space-one-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Design: over-ear.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Bluetooth 5.3, plus AUX-in for wired listening with an audio cable.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Adaptive Active Noise Cancellation.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Three microphones with AI enhancement for calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e5",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Multipoint connection is supported.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "soundcore-space-one-e6",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "The ear cups rotate and fold for storage.",
+        "evidence_kind": "SPEC",
+        "source_name": "soundcore, Space One product page and specs",
+        "source_url": "https://www.soundcore.com/products/space-one-a3035011",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "beats-powerbeats-pro-2",
+    "name": "Beats Powerbeats Pro 2",
+    "brand": "Beats",
+    "model": "Powerbeats Pro 2",
+    "price_usd": 249.99,
+    "price_source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+    "price_basis": "LAUNCH_MSRP",
+    "type": "IN_EAR",
+    "connection": "WIRELESS",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "WATER_RESISTANT"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "In-ear earphones with a redesigned earhook.",
+        "evidence_kind": "SPEC",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Class 1 Bluetooth wireless connectivity.",
+        "evidence_kind": "SPEC",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Active Noise Cancellation (ANC).",
+        "evidence_kind": "SPEC",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Three microphones and a voice accelerometer in each earbud for calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-powerbeats-pro-2-e5",
+        "supported_attribute": "WATER_RESISTANT",
+        "factual_claim": "Earbuds are sweat and water resistant with an IPX4 rating; the case is not rated.",
+        "evidence_kind": "SPEC",
+        "source_name": "Beats, Powerbeats Pro 2 press release (Business Wire, 11 Feb 2025)",
+        "source_url": "https://www.businesswire.com/news/home/20250211896520/en",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "sony-wf-c510",
+    "name": "Sony WF-C510",
+    "brand": "Sony",
+    "model": "WF-C510",
+    "price_usd": 69.99,
+    "price_source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "IN_EAR",
+    "connection": "WIRELESS",
+    "feature_tags": [
+      "MICROPHONE",
+      "WATER_RESISTANT",
+      "MULTIPOINT"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "sony-wf-c510-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Closed-type truly wireless earbuds, shaped using ear data from Sony's in-ear earbud line.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Wireless over Bluetooth 5.3.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e3",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "High-quality built-in microphone for hands-free calling.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e4",
+        "supported_attribute": "WATER_RESISTANT",
+        "factual_claim": "IPX4 rating for the earbuds; the charging case is not water resistant.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wf-c510-e5",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Multipoint Connection pairs with two Bluetooth devices simultaneously.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics US, WF-C510 product page",
+        "source_url": "https://electronics.sony.com/audio/headphones/all-headphones/p/wfc510-b",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "beats-solo-4",
+    "name": "Beats Solo 4",
+    "brand": "Beats",
+    "model": "Solo 4",
+    "price_usd": 199.99,
+    "price_source_url": "https://www.businesswire.com/news/home/20240430448719/en/Introducing-Beats-Solo-Buds-Looks-Tiny-Sounds-Huge",
+    "price_basis": "LAUNCH_MSRP",
+    "type": "ON_EAR",
+    "connection": "BOTH",
+    "feature_tags": [
+      "MICROPHONE",
+      "FOLDABLE"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "beats-solo-4-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Form factor: on-ear.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Class 1 Bluetooth, plus lossless audio via USB-C or a 3.5 mm audio cable.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e3",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Multiple digital beam-forming microphones for calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "beats-solo-4-e4",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "Compact foldable design with a soft protective case.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple Canada, Beats Solo 4 product page",
+        "source_url": "https://www.apple.com/ca/shop/product/muw23dn/a/beats-solo-4-on-ear-wireless-headphones-matt-black",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  }
+]

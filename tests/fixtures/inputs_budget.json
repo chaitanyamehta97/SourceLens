@@ -1,0 +1,73 @@
+{
+  "accept": [
+    "1",
+    "1.00",
+    "1.5",
+    "49.99",
+    "50",
+    "2000",
+    "2000.00"
+  ],
+  "reject": [
+    {
+      "value": "",
+      "why": "blank"
+    },
+    {
+      "value": "   ",
+      "why": "blank after trim"
+    },
+    {
+      "value": "abc",
+      "why": "non-numeric"
+    },
+    {
+      "value": "0",
+      "why": "below $1.00"
+    },
+    {
+      "value": "0.99",
+      "why": "below $1.00"
+    },
+    {
+      "value": "-5",
+      "why": "negative"
+    },
+    {
+      "value": "2000.01",
+      "why": "above $2,000.00"
+    },
+    {
+      "value": "12.345",
+      "why": "more than two decimals"
+    },
+    {
+      "value": "nan",
+      "why": "Python float() accepts it, and NaN fails every comparison, so a naive range check lets it through"
+    },
+    {
+      "value": "NaN",
+      "why": "same as nan"
+    },
+    {
+      "value": "inf",
+      "why": "Python float() accepts it"
+    },
+    {
+      "value": "Infinity",
+      "why": "Python float() accepts it"
+    },
+    {
+      "value": "1e400",
+      "why": "parses to inf"
+    },
+    {
+      "value": "1_000",
+      "why": "Python float() accepts underscores; not a plain decimal"
+    },
+    {
+      "value": "$50",
+      "why": "currency symbol; non-numeric"
+    }
+  ]
+}

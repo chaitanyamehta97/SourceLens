@@ -1,2 +1,5 @@
 # Verified on PyPI 2026-11-22 (publisher, source repo, release history); pip-audit clean.
 pytest==9.2.0
+# Added 2026-11-22 for app.py. Package metadata: Snowflake Inc, streamlit.io.
+# TODO before merge: confirm publisher and source repo on pypi.org and run pip-audit.
+streamlit==1.67.0
