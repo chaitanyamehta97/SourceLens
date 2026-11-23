@@ -28,18 +28,18 @@ def test_non_dict_evidence_is_rejected():  # SR-2
 
 @pytest.mark.parametrize("shape", [[GOOD], {"products": [GOOD]}])
 def test_both_catalog_shapes_load(tmp_path, monkeypatch, shape):  # SR-1
-    path = tmp_path / "catalog.json"
+    path = tmp_path / "test_catalog.json"
     path.write_text(json.dumps(shape), encoding="utf-8")
-    monkeypatch.setattr(cl, "CATALOG_PATH", path)
-    assert len(cl.load_catalog()) == 1
+    #monkeypatch.setattr(cl, "CATALOG_PATH", path)
+    assert len(cl.load_catalog(path)) == 1
 
 @pytest.mark.parametrize("shape", ['{"items": []}', '"text"', '42'])
 def test_wrong_catalog_shape_fails_closed(tmp_path, monkeypatch, shape):  # SR-1
-    path = tmp_path / "catalog.json"
+    path = tmp_path / "test_catalog.json"
     path.write_text(shape, encoding="utf-8")
-    monkeypatch.setattr(cl, "CATALOG_PATH", path)
+    #monkeypatch.setattr(cl, "CATALOG_PATH", path)
     with pytest.raises(CatalogLoadError):
-        cl.load_catalog()
+        cl.load_catalog(path)
 
 def test_curated_catalogs_now_load():  # SR-3
     with open("catalog/curation_chaitanya.json", encoding="utf-8") as f:
