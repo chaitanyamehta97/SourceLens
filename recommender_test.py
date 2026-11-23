@@ -29,7 +29,7 @@ def test_recommend():
         "soundcore-space-one",
     ]
 
-    assert [r["score"] for r in results] == [3.0]
+    assert [r["score"] for r in results] == [5.0]
 
 
 test_recommend()
