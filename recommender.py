@@ -111,7 +111,7 @@ class Recommender:
 
         # FR-06: top 3 after a deterministic sort
         results.sort(key=ranking_key)
-        return results
+        return results[:TOP_N]
 
 
 

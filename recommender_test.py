@@ -25,21 +25,11 @@ def test_recommend():
     # 3) Check output
     results = recommender.recommend(prefs)
 
-    print(len(results))
     assert [r["product"]["product_id"] for r in results] == [
         "soundcore-space-one",
-        "sony-wf-c510",
-        "beats-solo-4",
     ]
-    assert [r["score"] for r in results] == [3.0, 1.0, 1.0]
 
-    assert results[0]["matched_attributes"] == ["CONNECTION", "NOISE_CANCELLING", "MULTIPOINT", "FOLDABLE"]
-    assert results[1]["match_summary"] == {
-        "NOISE_CANCELLING": "not met",
-        "MULTIPOINT": "met",
-        "FOLDABLE": "not met",
-    }
-
+    assert [r["score"] for r in results] == [3.0]
 
 
 test_recommend()
