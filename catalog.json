@@ -509,5 +509,240 @@
       }
     ],
     "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "sony-wh1000xm6",
+    "name": "Sony WH-1000XM6",
+    "brand": "Sony",
+    "model": "WH-1000XM6",
+    "price_usd": 459.99,
+    "price_source_url": "https://electronics.sony.com/audio/headphones/headband/p/wh1000xm6-b",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "OVER_EAR",
+    "connection": "BOTH",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "MULTIPOINT",
+      "FOLDABLE"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "sony-wh1000xm6-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Wearing style is over-ear.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Asia Pacific, WH-1000XM6 specifications",
+        "source_url": "https://www.sony-asia.com/headphones/products/wh-1000xm6/spec",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wh1000xm6-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Bluetooth 5.3, plus a stereo mini jack input for the supplied 1.2 m headphone cable.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Asia Pacific, WH-1000XM6 specifications",
+        "source_url": "https://www.sony-asia.com/headphones/products/wh-1000xm6/spec",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wh1000xm6-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Active noise canceling driven by the HD Noise Canceling Processor QN3 and twelve microphones.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics press release, 15 May 2025",
+        "source_url": "https://sony.mediaroom.com/2025-05-15-Sony-Introduces-the-Best-Noise-Cancellation-with-the-WH-1000XM6-Headphones",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wh1000xm6-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Six-microphone AI beamforming system for calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics press release, 15 May 2025",
+        "source_url": "https://sony.mediaroom.com/2025-05-15-Sony-Introduces-the-Best-Noise-Cancellation-with-the-WH-1000XM6-Headphones",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wh1000xm6-e5",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Multipoint connection is supported.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Asia Pacific, WH-1000XM6 specifications",
+        "source_url": "https://www.sony-asia.com/headphones/products/wh-1000xm6/spec",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sony-wh1000xm6-e6",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "Folding mechanism lets the headphones fold to fit bags and airplane seat pockets.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sony Electronics press release, 15 May 2025",
+        "source_url": "https://sony.mediaroom.com/2025-05-15-Sony-Introduces-the-Best-Noise-Cancellation-with-the-WH-1000XM6-Headphones",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "apple-airpods-pro-3",
+    "name": "Apple AirPods Pro 3",
+    "brand": "Apple",
+    "model": "AirPods Pro 3",
+    "price_usd": 249.0,
+    "price_source_url": "https://www.businesswire.com/news/home/20250909862605/en",
+    "price_basis": "LAUNCH_MSRP",
+    "type": "IN_EAR",
+    "connection": "WIRELESS",
+    "feature_tags": [
+      "NOISE_CANCELLING",
+      "MICROPHONE",
+      "WATER_RESISTANT"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "apple-airpods-pro-3-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "In-ear earbuds supplied with silicone ear tips in five sizes (XXS to L).",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple, AirPods Pro 3 Technical Specifications",
+        "source_url": "https://www.apple.com/airpods-pro/specs/",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "apple-airpods-pro-3-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Bluetooth 5.3 wireless technology.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple, AirPods Pro 3 Technical Specifications",
+        "source_url": "https://www.apple.com/airpods-pro/specs/",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "apple-airpods-pro-3-e3",
+        "supported_attribute": "NOISE_CANCELLING",
+        "factual_claim": "Active Noise Cancellation.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple, AirPods Pro 3 Technical Specifications",
+        "source_url": "https://www.apple.com/airpods-pro/specs/",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "apple-airpods-pro-3-e4",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Dual beamforming microphones.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple, AirPods Pro 3 Technical Specifications",
+        "source_url": "https://www.apple.com/airpods-pro/specs/",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "apple-airpods-pro-3-e5",
+        "supported_attribute": "WATER_RESISTANT",
+        "factual_claim": "Dust, sweat, and water resistant (IP57), earbuds and charging case.",
+        "evidence_kind": "SPEC",
+        "source_name": "Apple, AirPods Pro 3 Technical Specifications",
+        "source_url": "https://www.apple.com/airpods-pro/specs/",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "jbl-tune-520bt",
+    "name": "JBL Tune 520BT",
+    "brand": "JBL",
+    "model": "Tune 520BT",
+    "price_usd": 59.95,
+    "price_source_url": "https://www.jbl.com/JBLT520BTPURAM.html",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "ON_EAR",
+    "connection": "WIRELESS",
+    "feature_tags": [
+      "MICROPHONE",
+      "MULTIPOINT",
+      "FOLDABLE"
+    ],
+    "evidence": [
+      {
+        "evidence_id": "jbl-tune-520bt-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "On-ear headphones.",
+        "evidence_kind": "SPEC",
+        "source_name": "JBL, Tune 520BT product page and specs",
+        "source_url": "https://global.jbl.com/on-ear-headphones/TUNE520BT.html",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "jbl-tune-520bt-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Wireless connection over Bluetooth 5.3.",
+        "evidence_kind": "SPEC",
+        "source_name": "JBL, Tune 520BT product page and specs",
+        "source_url": "https://global.jbl.com/on-ear-headphones/TUNE520BT.html",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "jbl-tune-520bt-e3",
+        "supported_attribute": "MICROPHONE",
+        "factual_claim": "Built-in microphone for hands-free calls.",
+        "evidence_kind": "SPEC",
+        "source_name": "JBL, Tune 520BT product page and specs",
+        "source_url": "https://global.jbl.com/on-ear-headphones/TUNE520BT.html",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "jbl-tune-520bt-e4",
+        "supported_attribute": "MULTIPOINT",
+        "factual_claim": "Multi-point connection between two Bluetooth devices.",
+        "evidence_kind": "SPEC",
+        "source_name": "JBL, Tune 520BT product page and specs",
+        "source_url": "https://global.jbl.com/on-ear-headphones/TUNE520BT.html",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "jbl-tune-520bt-e5",
+        "supported_attribute": "FOLDABLE",
+        "factual_claim": "Foldable design; folds flat for carrying.",
+        "evidence_kind": "SPEC",
+        "source_name": "JBL, Tune 520BT product page and specs",
+        "source_url": "https://global.jbl.com/on-ear-headphones/TUNE520BT.html",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
+  },
+  {
+    "product_id": "sennheiser-hd560s",
+    "name": "Sennheiser HD 560S",
+    "brand": "Sennheiser",
+    "model": "HD 560S",
+    "price_usd": 279.95,
+    "price_source_url": "https://us.sennheiser-hearing.com/products/hd-560s",
+    "price_basis": "MANUFACTURER_LIST",
+    "type": "OVER_EAR",
+    "connection": "WIRED",
+    "feature_tags": [],
+    "evidence": [
+      {
+        "evidence_id": "sennheiser-hd560s-e1",
+        "supported_attribute": "TYPE",
+        "factual_claim": "Wearing style is over-ear.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sennheiser support, HD 560S Specifications",
+        "source_url": "https://support.sennheiser-hearing.com/hc/en-fi/articles/38271134258077-HD-560S-Specifications",
+        "checked_on": "2026-11-07"
+      },
+      {
+        "evidence_id": "sennheiser-hd560s-e2",
+        "supported_attribute": "CONNECTION",
+        "factual_claim": "Wired audio connection, 3.5 mm / 6.3 mm plug.",
+        "evidence_kind": "SPEC",
+        "source_name": "Sennheiser support, HD 560S Specifications",
+        "source_url": "https://support.sennheiser-hearing.com/hc/en-fi/articles/38271134258077-HD-560S-Specifications",
+        "checked_on": "2026-11-07"
+      }
+    ],
+    "updated_on": "2026-11-07"
   }
 ]
