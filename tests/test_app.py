@@ -19,6 +19,7 @@ from recommender import Recommender
 
 APP = str(Path(__file__).parents[1] / "app.py")
 NOTICE = "not from a generative AI model"
+PRICE_NOTE_TEXT = "may differ from retailers"
 
 
 @pytest.fixture(autouse=True)
@@ -226,3 +227,31 @@ def test_evidence_text_is_escaped(monkeypatch, tmp_path):  # SEC-01
     at = submit(run(type=record["type"]), "2000", [0])
     shown = " ".join(m.value for m in at.expander[0].markdown)
     assert "\\[win\\]" in shown and "\\*\\*now\\*\\*" in shown
+
+
+# ---------- W13: price notes (FR-18) ----------
+
+
+def test_every_price_shows_basis_date_and_note():  # FR-18
+    at = submit(run(), "2000")
+    records = {r["name"]: r for r in catalog_loader.load_catalog(CATALOG)}
+    cards = [m.value for m in at.markdown if m.value.startswith("**#")]
+    notes = [c.value for c in at.caption if PRICE_NOTE_TEXT in c.value]
+    assert len(cards) == len(notes) == 3
+    for card, note in zip(cards, notes, strict=True):
+        name = card.split(" ", 1)[1].split("**", 1)[0].replace("\\", "")
+        record = records[name]
+        assert "as of " in note and "unavailable" not in note
+        if record["price_basis"] == "LAUNCH_MSRP":
+            assert "Launch price" in note
+
+
+def test_price_source_url_never_appears_on_the_page():
+    at = submit(run(), "2000")
+    shown = " ".join(
+        e.value for e in [*at.markdown, *at.caption] if isinstance(e.value, str)
+    )
+    for record in catalog_loader.load_catalog(CATALOG):
+        evidence_urls = {ev["source_url"] for ev in record["evidence"]}
+        if record["price_source_url"] not in evidence_urls:
+            assert record["price_source_url"] not in shown
