@@ -15,10 +15,13 @@ What this version does:
            behind every reason: claim, source, kind, date checked, and
            "source may be outdated" after 180 days
     SEC-01 catalog text is escaped before display
+    FR-18  every price shows its basis (list or launch price), the date it
+           was recorded and a note that prices may differ from retailers;
+           the price source link is never shown
     SEC-02 evidence links are http/https only and show their domain
     NFR-07 every control has a visible label
 
-Not yet (W13): comparison (FR-11), Reset (FR-12) and price notes (FR-18).
+Not yet (W13): comparison (FR-11) and Reset (FR-12).
 
 The UI never reads the catalog file itself: it calls catalog_loader and
 recommender, so the storage choice (ADR-0003) does not affect this file.
@@ -39,6 +42,7 @@ from preferences import (
     label,
     type_options,
 )
+from price_note import format_price, price_caption
 from recommender import Recommender
 
 ROOT = Path(__file__).parent
@@ -128,8 +132,9 @@ def show_results(results: list, request) -> None:
         product = result["product"]
         with st.container(border=True):
             st.markdown(
-                f"**#{rank} {plain(product['name'])}** · ${product['price_usd']:,.2f}"
+                f"**#{rank} {plain(product['name'])}** · {plain(format_price(product))}"
             )
+            st.caption(plain(price_caption(product)))  # FR-18
             matched = [
                 attribute_label(a, request) for a in result["matched_attributes"]
             ]
