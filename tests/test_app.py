@@ -19,6 +19,7 @@ from recommender import Recommender
 
 APP = str(Path(__file__).parents[1] / "app.py")
 NOTICE = "not from a generative AI model"
+PRICE_NOTE_TEXT = "may differ from retailers"
 
 
 @pytest.fixture(autouse=True)
@@ -160,3 +161,97 @@ def test_catalog_text_is_escaped(monkeypatch, tmp_path):  # SEC-01
     at = submit(run(), "2000")
     line = next(m.value for m in at.markdown if m.value.startswith("**#1"))
     assert "\\[click\\]" in line and "\\*\\*bold\\*\\*" in line
+
+
+# ---------- W13: evidence panel (FR-07, FR-08, FR-15, SEC-01, SEC-02) ----------
+
+
+def first_record_with(**changes):
+    records = json.loads(CATALOG.read_text("utf-8"))
+    return dict(records[0], **changes)
+
+
+def test_every_result_has_a_sources_panel_for_its_reasons():  # FR-07, FR-08
+    at = submit(run(connection="WIRELESS", features=["NOISE_CANCELLING"]), "500")
+    request = at.session_state["request"]
+    expected = Recommender(catalog_loader.load_catalog(CATALOG), WEIGHTS).recommend(
+        request.to_recommender_prefs()
+    )
+    assert len(at.expander) == len(expected) > 0
+    for panel, result in zip(at.expander, expected, strict=True):
+        assert panel.label.startswith("Sources for these reasons")
+        shown = " ".join(m.value for m in panel.markdown)
+        for ev in result["product"]["evidence"]:
+            if ev["supported_attribute"] in result["matched_attributes"]:
+                assert plain(ev["factual_claim"]) in shown
+        details = " ".join(c.value for c in panel.caption)
+        assert "checked" in details and "](https://" in details
+
+
+def test_source_link_shows_domain_and_real_url(monkeypatch, tmp_path):  # SEC-02
+    record = first_record_with()
+    record["evidence"] = [
+        ev for ev in record["evidence"] if ev["supported_attribute"] == "TYPE"
+    ]
+    use_catalog(monkeypatch, tmp_path, json.dumps([record]))
+    at = submit(run(type=record["type"]), "2000", [0])
+    caption = at.expander[0].caption[0].value
+    link_text, href = caption.split("[", 1)[1].split("](", 1)
+    assert href.rstrip(")") == record["evidence"][0]["source_url"]
+    domain = link_text.split(" :material", 1)[0].replace("\\", "")
+    assert domain in href and not domain.startswith("www.")
+
+
+@pytest.mark.parametrize(("days_ago", "labelled"), [(179, False), (181, True)])
+def test_old_sources_are_labelled(monkeypatch, tmp_path, days_ago, labelled):  # FR-15
+    from datetime import date, timedelta
+
+    checked = (date.today() - timedelta(days=days_ago)).isoformat()
+    record = first_record_with()
+    record["evidence"] = [dict(ev, checked_on=checked) for ev in record["evidence"]]
+    use_catalog(monkeypatch, tmp_path, json.dumps([record]))
+    at = submit(run(type=record["type"]), "2000", [0])
+    details = " ".join(c.value for c in at.expander[0].caption)
+    assert ("source may be outdated" in details) is labelled
+
+
+def test_evidence_text_is_escaped(monkeypatch, tmp_path):  # SEC-01
+    record = first_record_with()
+    record["evidence"] = [
+        dict(ev, factual_claim="[win](javascript:alert(1)) **now**")
+        if ev["supported_attribute"] == "TYPE"
+        else ev
+        for ev in record["evidence"]
+    ]
+    use_catalog(monkeypatch, tmp_path, json.dumps([record]))
+    at = submit(run(type=record["type"]), "2000", [0])
+    shown = " ".join(m.value for m in at.expander[0].markdown)
+    assert "\\[win\\]" in shown and "\\*\\*now\\*\\*" in shown
+
+
+# ---------- W13: price notes (FR-18) ----------
+
+
+def test_every_price_shows_basis_date_and_note():  # FR-18
+    at = submit(run(), "2000")
+    records = {r["name"]: r for r in catalog_loader.load_catalog(CATALOG)}
+    cards = [m.value for m in at.markdown if m.value.startswith("**#")]
+    notes = [c.value for c in at.caption if PRICE_NOTE_TEXT in c.value]
+    assert len(cards) == len(notes) == 3
+    for card, note in zip(cards, notes, strict=True):
+        name = card.split(" ", 1)[1].split("**", 1)[0].replace("\\", "")
+        record = records[name]
+        assert "as of " in note and "unavailable" not in note
+        if record["price_basis"] == "LAUNCH_MSRP":
+            assert "Launch price" in note
+
+
+def test_price_source_url_never_appears_on_the_page():
+    at = submit(run(), "2000")
+    shown = " ".join(
+        e.value for e in [*at.markdown, *at.caption] if isinstance(e.value, str)
+    )
+    for record in catalog_loader.load_catalog(CATALOG):
+        evidence_urls = {ev["source_url"] for ev in record["evidence"]}
+        if record["price_source_url"] not in evidence_urls:
+            assert record["price_source_url"] not in shown
